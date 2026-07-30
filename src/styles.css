@@ -1,0 +1,316 @@
+
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+:root {
+    --primary-color: #0F172A;
+    --secondary-color: #4F46E5;
+    --tertiary-color: #F8FAFC;
+    --neutral-color: #64748B;
+    --accent-color: #4F46E5;
+}
+
+body.dark-mode {
+    --primary-color: #6366F1;
+    --secondary-color: #0F172A;
+    --tertiary-color: #1E293B;
+    --neutral-color: #94A3B8;
+    --accent-color: #6366F1;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif !important;
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.custom-navbar {
+    background: var(--tertiary-color) !important;
+    padding: 0.6rem 2.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    border-bottom: 1px solid rgba(100, 116, 139, 0.15) !important;
+    transition: background 0.3s ease !important;
+}
+
+.logo-text {
+    color: var(--primary-color) !important;
+    font-weight: 800 !important;
+    font-size: 1.6rem !important;
+    letter-spacing: 1.5px !important;
+    transition: color 0.3s ease !important;
+}
+
+p-menubar {
+    display: block !important;
+    width: 100% !important;
+}
+
+.p-menubar {
+    display: flex !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    position: relative !important;
+    align-items: center !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.p-menubar-start {
+    margin-right: auto !important;
+}
+
+.p-button {
+    font-weight: 600 !important;
+}
+
+@media screen and (min-width: 961px) {
+    .p-menubar .p-menuitem-icon,
+    .p-menuitem-icon,
+    span.p-menuitem-icon {
+        display: none !important;
+    }
+
+    .p-menubar-root-list {
+        display: flex !important;
+        gap: 2.5rem !important;
+        margin: 0 0 0 3rem !important;
+        padding: 0 !important;
+    }
+
+    body .p-menubar .p-menuitem,
+    body .p-menubar .p-menuitem-content,
+    body .p-menubar .p-menuitem-link,
+    body .p-menubar .p-menuitem-content:hover,
+    body .p-menubar .p-menuitem-link:hover,
+    body .p-menubar .p-menuitem-content:focus,
+    body .p-menubar .p-menuitem-link:focus,
+    body .p-menubar .p-menuitem-content:active,
+    body .p-menubar .p-menuitem-link:active,
+    body .p-menubar .p-focus > .p-menuitem-content,
+    body .p-menubar .p-menuitem-active > .p-menuitem-content,
+    body .p-menubar .p-menuitem-link:not(.p-disabled):hover,
+    body .p-menubar .p-menuitem-link:not(.p-disabled):focus {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
+        border: none !important;
+    }
+
+    .p-menuitem-text {
+        font-size: 1rem !important;
+        transition: color 0.3s ease !important;
+    }
+
+    .active-menu-item .p-menuitem-text {
+        color: var(--accent-color) !important;
+        font-weight: 700 !important;
+    }
+
+    .normal-menu-item .p-menuitem-text {
+        color: var(--neutral-color) !important;
+        font-weight: 600 !important;
+    }
+
+    .normal-menu-item:hover .p-menuitem-text {
+        color: var(--accent-color) !important;
+    }
+}
+
+
+.p-menubar-button,
+.p-menubar-menubutton {
+    position: absolute !important;
+    right: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    z-index: 100;
+}
+
+.theme-toggle-btn {
+    background: var(--tertiary-color) !important;
+    border: 1px solid rgba(100, 116, 139, 0.2) !important;
+    color: #f59e0b !important;
+    border-radius: 50% !important;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.05);
+}
+
+.signup-btn {
+    background: transparent !important;
+    border: none !important;
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    box-shadow: none !important;
+    transition: color 0.3s ease !important;
+}
+
+.signup-btn:hover {
+    color: var(--secondary-color) !important;
+}
+
+.signin-btn {
+    background: var(--primary-color) !important;
+    border: none !important;
+    color: var(--tertiary-color) !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 0.6rem 1.8rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.signin-btn:hover {
+    background: var(--secondary-color) !important;
+}
+
+body.dark-mode .theme-toggle-btn {
+    color: #a78bfa !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0 0 0 3rem;
+    padding: 0;
+}
+
+.nav-item {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--neutral-color);
+    transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+    color: var(--accent-color);
+}
+
+.nav-item.active {
+    color: var(--accent-color) !important;
+    font-weight: 700;
+}
+
+
+.custom-navbar {
+    position: relative;
+}
+
+.hamburger-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0 0 0 3rem;
+    padding: 0;
+}
+
+.nav-item {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--neutral-color);
+    transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+    color: var(--accent-color);
+}
+
+.nav-item.active {
+    color: var(--accent-color) !important;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 960px) {
+    .hamburger-btn {
+        display: block;
+    }
+
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--tertiary-color);
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(100, 116, 139, 0.15);
+        z-index: 999;
+    }
+
+
+    .nav-links.menu-open {
+        display: flex;
+    }
+
+    .nav-item {
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+}
+.mobile-only-item {
+    display: none !important;
+}
+
+@media screen and (max-width: 960px) {
+    .mobile-only-item {
+        display: block !important;
+        border-top: 1px solid rgba(100, 116, 139, 0.1);
+    }
+}
+.cart-btn {
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
+}
+.cart-btn:hover {
+    color: var(--accent-color) !important;
+}
+
+.account-btn {
+    background-color: var(--accent-color) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    padding: 0.5rem 1.2rem !important;
+    transition: opacity 0.2s ease !important;
+}
+.account-btn:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,59 @@
+<div class="custom-navbar shadow-1 w-full px-4 py-2 flex align-items-center justify-content-between">
+    <div class="logo-container">
+        <span class="logo-text">AMAZON</span>
+    </div>
+
+    <button class="hamburger-btn" (click)="toggleMenu()">
+        <i [ngClass]="isMenuOpen ? 'pi pi-times' : 'pi pi-bars'"></i>
+    </button>
+
+    <ul class="nav-links" [class.menu-open]="isMenuOpen">
+        <li *ngFor="let item of menuItems"
+            (click)="setActive(item)"
+            [class.active]="activeItem === item"
+            class="nav-item">
+            {{ item }}
+        </li>
+
+        <li class="nav-item mobile-only-item" (click)="setActive('Cart')" [class.active]="activeItem === 'Cart'">
+            <i class="pi pi-shopping-cart mr-2"></i> Cart
+        </li>
+
+        <ng-container *ngIf="authService.isLoggedIn(); else mobileLogin">
+            <li class="nav-item mobile-only-item" routerLink="/profile">
+                <i class="pi pi-user mr-2"></i> My Profile
+            </li>
+            <li class="nav-item mobile-only-item logout-mobile" (click)="logout()">
+                <i class="pi pi-sign-out mr-2"></i> Logout
+            </li>
+        </ng-container>
+
+        <ng-template #mobileLogin>
+            <li class="nav-item mobile-only-item" routerLink="/login">
+                <i class="pi pi-sign-in mr-2"></i> Login
+            </li>
+        </ng-template>
+    </ul>
+
+    <div class="hidden lg:flex align-items-center gap-3">
+        <button pButton
+                [icon]="isDarkMode ? 'pi pi-moon' : 'pi pi-sun'"
+                class="theme-toggle-btn"
+                (click)="toggleTheme()">
+        </button>
+
+        <button pButton
+                label="Cart"
+                icon="pi pi-shopping-cart"
+                class="p-button-text cart-btn">
+        </button>
+
+        <button pButton
+                [label]="authService.isLoggedIn() ? 'Account' : 'Login'"
+                [icon]="authService.isLoggedIn() ? 'pi pi-user' : 'pi pi-sign-in'"
+                class="account-btn"
+                (click)="onAccountClick($event, menu)">
+        </button>
+        <p-menu #menu [model]="accountMenuItems" [popup]="true" appendTo="body"/>
+    </div>
+</div>

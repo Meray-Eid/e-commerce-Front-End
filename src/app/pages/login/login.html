@@ -1,0 +1,56 @@
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+
+  <div class="pb-4 mb-4">
+    <h1 class="text-primary text-3xl font-bold text-900 text-center m-0 mb-1">Login</h1>
+    <p class="text-500 text-sm text-center m-0">Fill in the details below Login</p>
+  </div>
+
+  <div class="field mb-3">
+    <p-inputgroup>
+      <p-inputgroup-addon class="py-3 px-3">
+        <i class="pi pi-envelope"></i>
+      </p-inputgroup-addon>
+      <input pInputText formControlName="email" placeholder="Email" class="w-full py-2 px-3 text-lg" />
+    </p-inputgroup>
+    <div class="validation">
+      @if(loginForm.get('email')?.touched && loginForm.get('email')?.invalid){
+        @if(loginForm.get('email')?.hasError('required')){
+          <p style="color:red; font-size:12px; margin:0;">Email is required</p>
+        }
+        @if(loginForm.get('email')?.hasError('email')){
+          <p style="color:red; font-size:12px; margin:0;">Email is not valid</p>
+        }
+      }
+    </div>
+  </div>
+  <div class="field mb-3">
+    <p-inputgroup>
+      <p-inputgroup-addon class="py-3 px-3">
+        <i class="pi pi-lock"></i>
+      </p-inputgroup-addon>
+      <input pInputText type="password" formControlName="password" placeholder="Password" class="w-full py-2 px-3 text-lg" />
+    </p-inputgroup>
+    <div class="validation">
+      @if(loginForm.get('password')?.touched && loginForm.get('password')?.invalid){
+        @if(loginForm.get('password')?.hasError('required')){
+          <p style="color:red; font-size:12px; margin:0;">Password is required</p>
+        }
+        @if(loginForm.get('password')?.hasError('pattern')){
+          <p style="color:red; font-size:12px; margin:0;">Password is weak</p>
+        }
+      }
+    </div>
+  </div>
+  <div class="flex justify-content-end mb-3">
+  <a routerLink="/forget-password" class="forgot-password-link">
+    Forgot Password?
+  </a>
+</div>
+
+
+  <p-button label="Submit" styleClass="w-full py-3 text-lg font-medium" type="submit" [loading]="isLoading"/>
+  <p class="text-center text-500 text-sm mt-4 mb-0">
+    Don't have an account?
+    <a routerLink="/register" class="text-primary font-bold no-underline hover:underline cursor-pointer">Register here</a>
+  </p>
+</form>

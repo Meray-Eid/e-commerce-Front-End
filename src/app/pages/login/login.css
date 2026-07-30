@@ -1,0 +1,12 @@
+.forgot-password-link {
+  color: #594ae3;
+  text-decoration: none !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
+}
+
+.forgot-password-link:hover {
+  text-decoration: none !important;
+  opacity: 0.85;
+}
